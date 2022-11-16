@@ -1,0 +1,59 @@
+import React from "react";
+import { Dimensions, StyleSheet, Text, TouchableOpacity } from "react-native";
+
+function Button({ onPress, text, style, size, theme }) {
+
+
+
+    // if (size === "double") {
+    //     buttonStyles.push(styles.buttonDouble);
+    // }
+    //
+    // if (theme === "secondary") {
+    //     buttonStyles.push(styles.buttonSecondary);
+    //     textStyles.push(styles.textSecondary);
+    // } else if (theme === "accent") {
+    //     buttonStyles.push(styles.buttonAccent);
+    // }
+    return (
+        <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
+            <Text style={[styles.text, style]}>{text}</Text>
+        </TouchableOpacity>
+    );
+}
+
+const screen = Dimensions.get("window");
+const buttonWidth = screen.width / 4;
+
+const styles = StyleSheet.create({
+    button: {
+        backgroundColor: "#333333",
+        flex: 1,
+        height: Math.floor(buttonWidth - 10),
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: Math.floor(buttonWidth),
+        margin: 5,
+    },
+    text: {
+        color: "#fff",
+        fontSize: 30,
+    }
+})
+//     textSecondary: {
+//         color: "#060606",
+//     },
+//     buttonDouble: {
+//         width: screen.width / 2 - 10,
+//         flex: 0,
+//         alignItems: "flex-start",
+//         paddingLeft: 40,
+//     },
+//     buttonSecondary: {
+//         backgroundColor: "#a6a6a6",
+//     },
+//     buttonAccent: {
+//         backgroundColor: "#ffc107",
+//     },
+// });
+export default Button;
